@@ -27,9 +27,7 @@ const needCheckHost = process.env["CHECKHOST"]
 
 
 //机场签到cookie
-const jcqdcookie = "_ga=GA1.1.454867140.1688988938; _gcl_au=1.1.1039079636.1688988950; uid=246590; email=504626769%40qq.com; key=5657d74a79eff5dd22ab7d6ca47e2333342a8f1723f1c; ip=08217dc0027a7dcac25c3b0168e7ded4; expire_in=1692098236; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_74de457e-0312-4b4f-a843-8187ca90b961; _ga_NC10VPE6SR=GS1.1.1689506232.3.1.1689507249.0.0.0"
-
-
+  const jcqdinfo= ""
 const jcqdconfig ={
     method: 'post',
     url: 'https://v2free.org/user/checkin',
@@ -55,10 +53,6 @@ const jcqdconfig ={
     }
   };
   
-
-//机场url
-const jcqdurl= "https://v2free.net/user/checkin"
-
 // 填入Hao4k账号对应cookie
 let cookie = process.env["COOKIE"];
 
@@ -83,12 +77,6 @@ const headers = {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
 };
 
-const jcqdheader = {
-    'authority': 'v2free.org', 
-    'accept': 'application/json, text/javascript, */*; q=0.01', 
-    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8', 
-    Cookie: jcqdcookie,
-};
 
 const SJHeaders = {
     cookie: cookieSJ ?? cookie,
@@ -313,7 +301,6 @@ async function getCheckinInfo(host,jcqdinfo) {
 function jcqd() {
     axios(jcqdconfig)
     .then(function (response) {
-        var jcqdinfo= ""
         console.log(JSON.stringify(response.data),"jcqd成功");
         jcqdinfo= JSON.stringify(response.data).msg 
         console.log(jcqdinfo);
