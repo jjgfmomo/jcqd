@@ -307,7 +307,7 @@ function jcqd() {
       .catch(function (error) {
         console.log(error,"jcqd失败");
       });
-     return jcqdinfo
+     return jcqd
       
 }
 
