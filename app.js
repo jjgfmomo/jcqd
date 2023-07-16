@@ -315,8 +315,9 @@ function jcqd() {
     axios(jcqdconfig)
     .then(function (response) {
         console.log(JSON.stringify(response.data),"jcqd成功");
-        jcqdinfo= JSON.stringify(response.data).msg + "qcqd是否成功"
+        jcqdinfo= JSON.stringify(response.data).msg 
         console.log(jcqdinfo);
+        return jcqdinfo
       })
       .catch(function (error) {
         console.log(error,"jcqd失败");
