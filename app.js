@@ -25,7 +25,7 @@ const barkServer = process.env["BARKSERVER"]
 //配置需要打开的服务信息,hao4k 和 4ksj，未配置只对hao4k
 const needCheckHost = process.env["CHECKHOST"]
 
-const jcqdinfo =""
+let jcqdinfo =""
 //机场签到cookie
 const jcqdconfig ={
     method: 'post',
@@ -272,7 +272,7 @@ async function getCheckinInfoSJ(host) {
 }
 
 async function getCheckinInfo(host) {
-    console.log(jqqdinfo)
+    console.log(jcqdinfo,"在消息初始化中判断是否获取签到信息")
     let headers = host.header;
     await axios
         .get(host.url, {
@@ -297,7 +297,7 @@ async function getCheckinInfo(host) {
         });
 }
 function jcqd() {
-     console.log(jcqdinfo);
+     console.log(jcqdinfo,"获取现在自定义jcqd变量let");
     axios(jcqdconfig)
     .then(function (response) {
         console.log(JSON.stringify(response.data.msg),"jcqd成功");
