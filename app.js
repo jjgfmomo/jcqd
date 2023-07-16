@@ -31,11 +31,13 @@ const jcqdcookie = "_ga=GA1.1.1917225925.1688006364; _gcl_au=1.1.2036444125.1688
 
 
 //机场url
-const jcqdurl= "https://cdn.v2free.net/user/checkin"
+const jcqdurl= "https://v2free.net/user/checkin"
 
 // 填入Hao4k账号对应cookie
 let cookie = process.env["COOKIE"];
 
+
+ const jcqdinfo= ""
 
 // 填入4KSJ账号对应Cookie
 let cookieSJ = process.env["SJCOOKIE"];
@@ -289,6 +291,7 @@ function jcqd() {
     })
     .then((response)=>{
         console.log(JSON.stringify(response.data),"签到流量取得")
+        jcqdinfo=JSON.stringify(response.data)+"签到流量取得"
     })
 }
 
@@ -398,7 +401,7 @@ async function start() {
         } else {
             status += "签到失败！";
         }
-        message += "* " + hao4k.name + ": " + hao4k.message;
+        message += "* " + hao4k.name + ": " + hao4k.message + jcqdinfo;
     }
     console.log(status, message);
     pushNotice(status, message);
