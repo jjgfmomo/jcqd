@@ -427,7 +427,7 @@ async function start() {
         await getFormHash(hao4k);
         status += hao4k.name + ": ";
         if (hao4k.status) {
-            status += "签到成功！";
+            status += "签到成功！jcqd状态通知";
         } else {
             status += "签到失败！";
         }
