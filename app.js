@@ -27,7 +27,7 @@ const needCheckHost = process.env["CHECKHOST"]
 
 
 //机场签到cookie
-const jcqdcookie = "_ga=GA1.1.1917225925.1688006364; _gcl_au=1.1.2036444125.1688006578; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_396ed393-7c50-42a9-9408-6f3da71e583b; uid=189040; email=465264452%40qq.com; key=5afd328538e0df497ea84dc4ce75ad710cb93bfdc10ad; ip=3ff56e798d433248071052994fd053ea; expire_in=1690683112; _ga_NC10VPE6SR=GS1.1.1688091058.5.1.1688091115.0.0.0"
+const jcqdcookie = "_ga=GA1.1.454867140.1688988938; _gcl_au=1.1.1039079636.1688988950; uid=246590; email=504626769%40qq.com; key=5657d74a79eff5dd22ab7d6ca47e2333342a8f1723f1c; ip=08217dc0027a7dcac25c3b0168e7ded4; expire_in=1692098236; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_74de457e-0312-4b4f-a843-8187ca90b961; _ga_NC10VPE6SR=GS1.1.1689506232.3.1.1689507249.0.0.0"
 
 
 //机场url
