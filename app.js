@@ -304,11 +304,12 @@ function jcqd() {
       var jcqdinfo=""
         jcqdinfo = JSON.stringify(response.data.msg )
         console.log(jcqdinfo);
-        return jcqdinfo
+
       })
       .catch(function (error) {
         console.log(error,"jcqd失败");
       });
+            return jcqdinfo
       
 }
 
