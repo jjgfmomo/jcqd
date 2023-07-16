@@ -272,6 +272,7 @@ async function getCheckinInfoSJ(host) {
 }
 
 async function getCheckinInfo(host) {
+    console.log(jqqdinfo)
     let headers = host.header;
     await axios
         .get(host.url, {
