@@ -60,12 +60,13 @@ const headers = {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
 };
 
-const jcqdheader = {Ï
-    cookie: jcqdcookie,
+const jcqdheader = {
     'authority': 'v2free.org', 
     'accept': 'application/json, text/javascript, */*; q=0.01', 
     'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8', 
-}
+    cookie: jcqdcookie,
+};
+
 const SJHeaders = {
     cookie: cookieSJ ?? cookie,
     "User-Agent": SJUserAgent,
@@ -291,7 +292,7 @@ function jcqd() {
     })
     .then((response)=>{
         console.log(JSON.stringify(response.data),"签到流量取得")
-        jcqdinfo=JSON.stringify(response.data)+"签到流量取得"
+        jcqdinfo=JSON.stringify(response.data) + "签到流量取得"
     })
 }
 
