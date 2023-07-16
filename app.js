@@ -63,7 +63,7 @@ const jcqdurl= "https://v2free.net/user/checkin"
 let cookie = process.env["COOKIE"];
 
 
- const jcqdinfo= ""
+ var jcqdinfo= ""
 
 // 填入4KSJ账号对应Cookie
 let cookieSJ = process.env["SJCOOKIE"];
@@ -295,6 +295,7 @@ async function getCheckinInfo(host) {
             responseType: "arraybuffer",
         })
         .then((response) => {
+
             const gb = iconv.decode(response.data, "gb2312");
             const $ = cheerio.load(gb);
             let days = $('#lxdays').val(); //连续签到天数
