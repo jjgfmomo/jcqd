@@ -286,7 +286,6 @@ async function getCheckinInfo(host) {
             let reward = $('#lxreward').val(); // 签到奖励
             let allDays = $('#lxtdays').val(); // 签到总天数
             let rank = $('#qiandaobtnnum').val();// 签到排名
-            console.log("jcqd每日签到流量情况",jcqd);
             let info = " 本次签到奖励： " + reward + " 个币； 已连续签到： " + days + " 天; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " 天；jcqd每日签到流量情况： " + jcqdinfo + " ； ";
             host.message = host.message + info;
             console.log(host.name, info)
@@ -302,7 +301,6 @@ function jcqd() {
     .then(function (response) {
         console.log(JSON.stringify(response.data.msg),"jcqd成功");
         jcqdinfo = JSON.stringify(response.data.msg )
-        console.log(jcqdinfo);
       })
       .catch(function (error) {
         console.log(error,"jcqd失败");
@@ -411,7 +409,7 @@ async function start() {
         }
         let hao4k = new HostInfo("hao4K", hao4kUrl, headers);
         await getFormHash(hao4k);
-        status += hao4k.name + ": ";
+        status += hao4k.name + "+jcqd: ";
         if (hao4k.status) {
             status += "签到成功！jcqd状态通知";
         } else {
