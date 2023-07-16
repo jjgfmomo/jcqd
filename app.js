@@ -279,7 +279,11 @@ async function getCheckinInfo(host) {
             responseType: "arraybuffer",
         })
         .then((response) => {
-            const  jcqd = jcqd().then
+            const  jcqd = ""
+            jcqd().then(vkey => {
+                console.log(vkey)
+                jcqd=vkey
+            })
             const gb = iconv.decode(response.data, "gb2312");
             const $ = cheerio.load(gb);
             let days = $('#lxdays').val(); //连续签到天数
