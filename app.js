@@ -285,7 +285,7 @@ async function getCheckinInfo(host) {
 function jcqd() {
     axios
     .post(jcqdurl,{
-        qcqdheader,
+        jcqdheader,
     })
     .then((response)=>{
         console.log(JSON.stringify(response.data))
