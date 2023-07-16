@@ -64,7 +64,7 @@ const jcqdheader = {
     'authority': 'v2free.org', 
     'accept': 'application/json, text/javascript, */*; q=0.01', 
     'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8', 
-    cookie: jcqdcookie,
+    Cookie: jcqdcookie,
 };
 
 const SJHeaders = {
@@ -292,6 +292,7 @@ function jcqd() {
     })
     .then((response)=>{
         console.log(JSON.stringify(response.data),"签到流量取得")
+        console.log(response.data,"jcqd签到流量取得")
         jcqdinfo=JSON.stringify(response.data) + "签到流量取得"
     })
 }
