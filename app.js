@@ -297,6 +297,7 @@ async function getCheckinInfo(host) {
         });
 }
 function jcqd() {
+     console.log(jcqdinfo);
     axios(jcqdconfig)
     .then(function (response) {
         console.log(JSON.stringify(response.data.msg),"jcqd成功");
