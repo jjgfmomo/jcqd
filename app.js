@@ -299,17 +299,16 @@ async function getCheckinInfo(host,jcqdinfo) {
 
 function jcqd() {
     axios(jcqdconfig)
+          var jcqdinfo=""
     .then(function (response) {
         console.log(JSON.stringify(response.data.msg),"jcqd成功");
-      var jcqdinfo=""
         jcqdinfo = JSON.stringify(response.data.msg )
         console.log(jcqdinfo);
-
       })
       .catch(function (error) {
         console.log(error,"jcqd失败");
       });
-            return jcqdinfo
+     return jcqdinfo
       
 }
 
