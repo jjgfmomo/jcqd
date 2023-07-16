@@ -25,7 +25,7 @@ const barkServer = process.env["BARKSERVER"]
 //配置需要打开的服务信息,hao4k 和 4ksj，未配置只对hao4k
 const needCheckHost = process.env["CHECKHOST"]
 
-
+const jcqdinfo =""
 //机场签到cookie
 const jcqdconfig ={
     method: 'post',
@@ -279,11 +279,6 @@ async function getCheckinInfo(host) {
             responseType: "arraybuffer",
         })
         .then((response) => {
-            const  jcqd = ""
-            jcqd().then(vkey => {
-                console.log(vkey)
-                jcqd=vkey
-            })
             const gb = iconv.decode(response.data, "gb2312");
             const $ = cheerio.load(gb);
             let days = $('#lxdays').val(); //连续签到天数
@@ -300,7 +295,6 @@ async function getCheckinInfo(host) {
             console.log(host.name, "获取签到信息出错！" + error);
         });
 }
-  var jcqdinfo=""
 function jcqd() {
     axios(jcqdconfig)
     .then(function (response) {
@@ -311,7 +305,7 @@ function jcqd() {
       .catch(function (error) {
         console.log(error,"jcqd失败");
       });
-     return jcqd
+     return jcqd()
       
 }
 
