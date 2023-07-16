@@ -288,7 +288,7 @@ function jcqd() {
         jcqdheader,
     })
     .then((response)=>{
-        console.log(JSON.stringify(response.data))
+        console.log(JSON.stringify(response.data),"签到流量取得")
     })
 }
 
@@ -366,7 +366,6 @@ async function start() {
     let message = "未配置";
     let checkIn = false;
     jcqd()
-    console.log(jcqd())
     console.log("配置的打卡的服务", needCheckHost);
     const needCheck = needCheckHost ? needCheckHost : "hao4k";
     if (needCheck.indexOf("4ksj") !== -1) {
