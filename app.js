@@ -271,7 +271,7 @@ async function getCheckinInfoSJ(host) {
         });
 }
 
-async function getCheckinInfo(host,jcqdinfo) {
+async function getCheckinInfo(host) {
     let headers = host.header;
     await axios
         .get(host.url, {
@@ -279,15 +279,15 @@ async function getCheckinInfo(host,jcqdinfo) {
             responseType: "arraybuffer",
         })
         .then((response) => {
-
+            const  jcqd = jcqd().then
             const gb = iconv.decode(response.data, "gb2312");
             const $ = cheerio.load(gb);
             let days = $('#lxdays').val(); //连续签到天数
             let reward = $('#lxreward').val(); // 签到奖励
             let allDays = $('#lxtdays').val(); // 签到总天数
             let rank = $('#qiandaobtnnum').val();// 签到排名
-            console.log("jcqd每日签到流量情况",jcqdinfo);
-            let info = " 本次签到奖励： " + reward + " 个币； 已连续签到： " + days + " 天; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " 天；jcqd每日签到流量情况： " + jcqdinfo + " ； ";
+            console.log("jcqd每日签到流量情况",jcqd);
+            let info = " 本次签到奖励： " + reward + " 个币； 已连续签到： " + days + " 天; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " 天；jcqd每日签到流量情况： " + jcqd + " ； ";
             host.message = host.message + info;
             console.log(host.name, info)
         })
