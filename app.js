@@ -295,6 +295,10 @@ function jcqd() {
         console.log(response.data,"jcqd签到流量取得")
         jcqdinfo=JSON.stringify(response.data) + "签到流量取得"
     })
+    .catch((error) => {
+        host.message = "jcqd获取签到信息出错！" + error;
+        console.log(host.name, "jcqd获取签到信息出错！" + error);
+    });
 }
 
 function pushNotice(status, message) {
