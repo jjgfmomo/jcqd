@@ -27,7 +27,6 @@ const needCheckHost = process.env["CHECKHOST"]
 
 
 //机场签到cookie
-  const jcqdinfo= ""
 const jcqdconfig ={
     method: 'post',
     url: 'https://v2free.org/user/checkin',
