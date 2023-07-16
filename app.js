@@ -296,9 +296,8 @@ async function getCheckinInfo(host,jcqdinfo) {
             console.log(host.name, "获取签到信息出错！" + error);
         });
 }
-
+  var jcqdinfo=""
 function jcqd() {
-     var jcqdinfo=""
     axios(jcqdconfig)
     .then(function (response) {
         console.log(JSON.stringify(response.data.msg),"jcqd成功");
