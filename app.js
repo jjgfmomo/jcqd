@@ -402,7 +402,7 @@ async function start() {
         } else {
             status += "签到失败！";
         }
-        message += "* " + sj.name + ": " + sj.message + jcqdinfo;;
+        message += "* " + sj.name + ": " + sj.message;
     }
     if (needCheck.indexOf("hao4k") !== -1) {
         if (!checkIn) {
@@ -418,7 +418,7 @@ async function start() {
         } else {
             status += "签到失败！";
         }
-        message += "* " + hao4k.name + ": " + hao4k.message + jcqdinfo;
+        message += "* " + hao4k.name + ": " + hao4k.message;
     }
     console.log(status, message);
     pushNotice(status, message);
