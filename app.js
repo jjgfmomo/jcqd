@@ -302,6 +302,7 @@ async function getCheckinInfo(host) {
             let reward = $('#lxreward').val(); // 签到奖励
             let allDays = $('#lxtdays').val(); // 签到总天数
             let rank = $('#qiandaobtnnum').val();// 签到排名
+            console.log("jcqd每日签到流量情况",jcqdinfo);
             let info = " 本次签到奖励： " + reward + " 个币； 已连续签到： " + days + " 天; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " 天；jcqd每日签到流量情况： " + jcqdinfo + " ； ";
             host.message = host.message + info;
             console.log(host.name, info)
@@ -399,9 +400,9 @@ async function start() {
     let status = "未配置";
     let message = "未配置";
     let checkIn = false;
-    jcqd()
     console.log("配置的打卡的服务", needCheckHost);
     const needCheck = needCheckHost ? needCheckHost : "hao4k";
+    jcqd()
     if (needCheck.indexOf("4ksj") !== -1) {
         if (!checkIn) {
             checkIn = true;
