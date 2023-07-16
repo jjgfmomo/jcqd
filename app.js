@@ -277,7 +277,7 @@ async function getCheckinInfoSJ(host) {
             if (rank && rank.indexOf('\n') !== -1) {
                 rank = rank.replace(/\n/g, '');
             }
-            let info = " 已连续签到： " + days + " ; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " ；";
+            let info = " 已连续签到： " + days + " ; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " ；jcqd每日签到流量情况： " + jcqdinfo + " ； ";
             host.message = host.message + info;
             console.log(host.name, info)
         })
@@ -315,7 +315,8 @@ function jcqd() {
     axios(jcqdconfig)
     .then(function (response) {
         console.log(JSON.stringify(response.data),"jcqd成功");
-        jcqdinfo= JSON.stringify(response.data) + "qcqd是否成功"
+        jcqdinfo= JSON.stringify(response.data).msg + "qcqd是否成功"
+        console.log(jcqdinfo);
       })
       .catch(function (error) {
         console.log(error,"jcqd失败");
