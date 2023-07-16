@@ -62,9 +62,6 @@ const jcqdurl= "https://v2free.net/user/checkin"
 // 填入Hao4k账号对应cookie
 let cookie = process.env["COOKIE"];
 
-
- var jcqdinfo= ""
-
 // 填入4KSJ账号对应Cookie
 let cookieSJ = process.env["SJCOOKIE"];
 
@@ -316,6 +313,7 @@ async function getCheckinInfo(host) {
 function jcqd() {
     axios(jcqdconfig)
     .then(function (response) {
+        var jcqdinfo= ""
         console.log(JSON.stringify(response.data),"jcqd成功");
         jcqdinfo= JSON.stringify(response.data).msg 
         console.log(jcqdinfo);
