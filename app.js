@@ -331,7 +331,7 @@ function jcqd() {
       .catch(function (error) {
         console.log(error,"jcqd失败");
       });
-      return ylljcqdinfo
+    
     axios(jcqdconfig)
     .then(function (response) {
         console.log(JSON.stringify(response.data.msg),"jcqd成功");
@@ -340,7 +340,7 @@ function jcqd() {
       .catch(function (error) {
         console.log(error,"jcqd失败");
       });
-     return jcqdinfo
+   
       
 }
 
