@@ -26,6 +26,7 @@ const barkServer = process.env["BARKSERVER"]
 const needCheckHost = process.env["CHECKHOST"]
 
 let jcqdinfo =""
+let ylljcqdinfo =""
 //机场签到cookie
 const jcqdconfig ={
     method: 'post',
@@ -37,6 +38,30 @@ const jcqdconfig ={
       'cache-control': 'no-cache', 
       'content-length': '0', 
       'cookie': '_ga=GA1.1.1917225925.1688006364; _gcl_au=1.1.2036444125.1688006578; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_396ed393-7c50-42a9-9408-6f3da71e583b; uid=189040; email=465264452%40qq.com; key=5afd328538e0df497ea84dc4ce75ad710cb93bfdc10ad; ip=3ff56e798d433248071052994fd053ea; expire_in=1690683112; _ga_NC10VPE6SR=GS1.1.1688091058.5.1.1688091115.0.0.0', 
+      'dnt': '1', 
+      'origin': 'https://v2free.org', 
+      'pragma': 'no-cache', 
+      'referer': 'https://v2free.org/user', 
+      'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Microsoft Edge";v="114"', 
+      'sec-ch-ua-mobile': '?0', 
+      'sec-ch-ua-platform': '"Windows"', 
+      'sec-fetch-dest': 'empty', 
+      'sec-fetch-mode': 'cors', 
+      'sec-fetch-site': 'same-origin', 
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.58', 
+      'x-requested-with': 'XMLHttpRequest'
+    }
+  };
+const ylljcqdconfig ={
+    method: 'post',
+    url: 'https://v2free.org/user/checkin',
+    headers: { 
+      'authority': 'v2free.org', 
+      'accept': 'application/json, text/javascript, */*; q=0.01', 
+      'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8', 
+      'cache-control': 'no-cache', 
+      'content-length': '0', 
+      'cookie': '_ga=GA1.1.919282123.1688973466; _gcl_au=1.1.1146952502.1688973547; uid=250246; email=1721294535%40qq.com; key=d50400f035ccd93212c9837645179885432e6c55d15dc; ip=02bcab6318024d2ab31cf014454f6452; expire_in=1691566154; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_1a741eba-7f17-4024-853c-38e6740cc5d9; _ga_NC10VPE6SR=GS1.1.1689819532.8.1.1689820419.0.0.0', 
       'dnt': '1', 
       'origin': 'https://v2free.org', 
       'pragma': 'no-cache', 
@@ -261,7 +286,7 @@ async function getCheckinInfoSJ(host) {
             if (rank && rank.indexOf('\n') !== -1) {
                 rank = rank.replace(/\n/g, '');
             }
-            let info = " 已连续签到： " + days + " ; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " ；jcqd每日签到流量情况： " + jcqdinfo + " ； ";
+            let info = " 已连续签到： " + days + " ; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " ；jcqd每日签到流量情况： " + jcqdinfo + " ； + ylljcqdinfo + " ； ";
             host.message = host.message + info;
             console.log(host.name, info)
         })
@@ -286,7 +311,7 @@ async function getCheckinInfo(host) {
             let reward = $('#lxreward').val(); // 签到奖励
             let allDays = $('#lxtdays').val(); // 签到总天数
             let rank = $('#qiandaobtnnum').val();// 签到排名
-            let info = " 本次签到奖励： " + reward + " 个币； 已连续签到： " + days + " 天; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " 天；jcqd每日签到流量情况： " + jcqdinfo + " ； ";
+            let info = " 本次签到奖励： " + reward + " 个币； 已连续签到： " + days + " 天; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " 天；jcqd每日签到流量情况： " + jcqdinfo + " ； + ylljcqdinfo + " ； ";
             host.message = host.message + info;
             console.log(host.name, info)
         })
@@ -297,6 +322,16 @@ async function getCheckinInfo(host) {
 }
 function jcqd() {
      console.log(jcqdinfo,"获取现在自定义jcqd变量let");
+    
+    axios(ylljcqdconfig)
+   .then(function (response) {
+        console.log(JSON.stringify(response.data.msg),"姚磊磊jcqd成功");
+        ylljcqdinfo = JSON.stringify(response.data.msg )
+      })
+      .catch(function (error) {
+        console.log(error,"jcqd失败");
+      });
+      return ylljcqdinfo
     axios(jcqdconfig)
     .then(function (response) {
         console.log(JSON.stringify(response.data.msg),"jcqd成功");
