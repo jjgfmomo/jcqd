@@ -311,7 +311,7 @@ async function getCheckinInfo(host) {
             let reward = $('#lxreward').val(); // 签到奖励
             let allDays = $('#lxtdays').val(); // 签到总天数
             let rank = $('#qiandaobtnnum').val();// 签到排名
-            let info = " 本次签到奖励： " + reward + " 个币； 已连续签到： " + days + " 天; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " 天；jcqd每日签到流量情况： " + jcqdinfo + " ；姚磊磊jcqd每日签到流量情况： + " ylljcqdinfo + " ； ";
+            let info = " 本次签到奖励： " + reward + " 个币； 已连续签到： " + days + " 天; 今日排名： " + rank + " 位； 签到总天数： " + allDays + " 天；jcqd每日签到流量情况： " + jcqdinfo + " ；姚磊磊jcqd每日签到流量情况： " + ylljcqdinfo + " ； ";
             host.message = host.message + info;
             console.log(host.name, info)
         })
