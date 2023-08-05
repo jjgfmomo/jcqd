@@ -37,7 +37,7 @@ const jcqdconfig ={
       'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8', 
       'cache-control': 'no-cache', 
       'content-length': '0', 
-      'cookie': '_ga=GA1.1.1917225925.1688006364; _gcl_au=1.1.2036444125.1688006578; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_396ed393-7c50-42a9-9408-6f3da71e583b; uid=189040; email=465264452%40qq.com; key=5afd328538e0df497ea84dc4ce75ad710cb93bfdc10ad; ip=3ff56e798d433248071052994fd053ea; expire_in=1690683112; _ga_NC10VPE6SR=GS1.1.1688091058.5.1.1688091115.0.0.0', 
+      'cookie': '_ga=GA1.1.1800466044.1688740664; uid=246703; email=504626633%40qq.com; key=b2c520375de92208df8b39652b107b80e968633ffb358; ip=58353d42fad556d28bf3ed3be7663d02; expire_in=1691332676; _gcl_au=1.1.1492133626.1688740687; _ga_NC10VPE6SR=GS1.1.1691257388.2.0.1691257388.0.0.0; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_d40fadbf-fdc3-4ba5-b8bc-0042661b230e', 
       'dnt': '1', 
       'origin': 'https://v2free.org', 
       'pragma': 'no-cache', 
