@@ -325,7 +325,7 @@ function jcqd() {
     
     axios(ylljcqdconfig)
    .then(function (response) {
-        console.log(JSON.stringify(response.data.msg),"姚磊磊jcqd成功");
+        console.log(JSON.stringify(response.data),"姚磊磊jcqd成功");
         ylljcqdinfo = JSON.stringify(response.data.msg )
       })
       .catch(function (error) {
